@@ -21,12 +21,9 @@
     @Prop({required: true}) fieldName!: string;
     @Prop() placeholder?: string;
 
-    @Watch('value')
     onValueChanged(value: string) {
       this.$emit('update:value', value);
-    }
-
-    
+    }    
   }
 </script>
 
