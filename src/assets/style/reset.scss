@@ -18,3 +18,21 @@ button, input{
 h1,h2,h3,h4,h5,h6{
     font-weight: normal;
 }
+
+@media (min-width: 500px) {
+    body {
+      background: #77b8f7;
+      position: relative;
+    }
+    #app {
+      position: absolute;
+      top: 0;
+      left: calc(50% - 195px);
+      width: 390px;
+      max-height: 844px;
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

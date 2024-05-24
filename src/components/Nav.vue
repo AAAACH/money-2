@@ -4,12 +4,10 @@
         <Icon name="money"/>
         记账
       </router-link>
-      |
       <router-link to="/labels" class="item" active-class="selected">
         <Icon name="labels"/>
         标签
       </router-link>
-      |
       <router-link to="/statistics" class="item" active-class="selected">
         <Icon name="statistics"/>
         统计
@@ -18,18 +16,18 @@
 </template>
 
 <script lang-"ts">
-    export default {
-        name: 'Nav',
-    };
+  export default {
+    name: 'Nav',
+  };
 </script>
 
 <style lang="scss" scoped>
-@import "~@/assets/style/helper.scss";
+  @import "~@/assets/style/helper.scss";
   nav {
-    @extend %outerShadow;
     display: flex;
     flex-direction: row;
     font-size: 12px;
+    box-shadow: 0 0 3px $color-shadow;
     > .item {
       padding: 2px 0;
       width: 33.33333%;
@@ -43,7 +41,7 @@
       }
     }
     > .item.selected{
-      color: $color-highlight;
+      color: $color-theme;
     }
   }
 </style>

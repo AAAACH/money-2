@@ -34,15 +34,19 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "~@/assets/style/helper.scss";
   .tags {
-    background: white;
+    margin: 16px;
+    background: $color-white;
+    border-radius: 10px;
     font-size: 16px;
+    font-weight: bold;
     padding-left: 16px;
     > .tag {
-      min-height: 44px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      min-height: 44px;
       border-bottom: 1px solid #E6E6E6;
       svg {
         width: 18px;
@@ -53,11 +57,11 @@
     }
   }
   .createTag {
-    background: #767676;
-    color: white;
-    border-radius: 4px;
-    border: none;
     height: 40px;
+    border: none;
+    background: $color-theme;
+    color: $color-white;
+    border-radius: 4px;
     padding: 0 16px;
     &-wrapper {
       text-align: center;
@@ -66,4 +70,3 @@
     }
   }
 </style>
-

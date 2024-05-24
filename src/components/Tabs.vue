@@ -37,14 +37,15 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "~@/assets/style/helper.scss";
   .tabs {
-    background: #C4C4C4;
     display: flex;
     text-align: center;
-    font-size: 24px;
+    font-size: 20px;
+    background: $color-background;
     &-item {
       width: 50%;
-      height: 64px;
+      height: 48px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -56,8 +57,13 @@
         left: 0;
         width: 100%;
         height: 4px;
-        background: #333;
+        background: $color-theme;
+        border-radius: 10px 10px 0 0;
       }
+      &.selected {
+        font-weight: bold;
+        color: $color-theme;
+      } 
     }
   }
 </style>

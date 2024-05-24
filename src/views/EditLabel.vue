@@ -9,7 +9,7 @@
       <FormItem :value="currentTag.name" @update:value="update" field-name="标签名" placeholder="请输入标签名"/>
     </div>
     <div class="button-wrapper">
-      <Button @click="remove">删除标签</Button>
+      <Button class="deleteButton" @click="remove">删除标签</Button>
     </div>
   </Layout>
 </template>
@@ -59,19 +59,24 @@
 </script>
 
 <style lang="scss" scoped>
-    .navBar {
-    text-align: center;
-    font-size: 16px;
-    padding: 12px 16px;
-    background: white;
+  @import "~@/assets/style/helper.scss";
+  .navBar {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-align: center;
+    font-size: 16px;
+    background: $color-white;
+    border-radius: 10px 10px 0 0;
+    padding: 12px 16px;
+    margin: 16px 16px 0;
     > .title {
+      font-size: 18px;
     }
     > .leftIcon {
       width: 24px;
       height: 24px;
+      color: #666;
     }
     > .rightIcon {
       width: 24px;
@@ -79,12 +84,16 @@
     }
   }
   .form-wrapper {
-    background: white;
-    margin-top: 8px;
+    background: $color-white;
+    border-radius: 0 0 10px 10px;
+    margin: 0 16px 0;
   }
   .button-wrapper {
     text-align: center;
     padding: 16px;
     margin-top: 44-16px;
+    > .deleteButton {
+      background: red;
+    }
   }
 </style>

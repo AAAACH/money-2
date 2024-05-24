@@ -1,10 +1,16 @@
 <template>
     <div class="tags">
-      <div class="new">
-        <button @click="createTag">新增标签</button>
-      </div>
-      <ul class="current">
-        <li v-for="tag in tagList" :key="tag.id" :class="{selected: selectedTags.indexOf(tag)>=0}" @click="toggle(tag)">{{tag.name}}</li>
+      <ul class="collection">
+        <li v-for="tag in tagList" :key="tag.id" :class="{selected: selectedTags.indexOf(tag)>=0}" @click="toggle(tag)">
+          <div class="current">
+            {{tag.name}}
+          </div>
+        </li>
+        <li>
+          <div class="new" @click="createTag">
+            <Icon name="add" />
+          </div>
+        </li>
       </ul>
     </div>
 </template>
@@ -40,41 +46,35 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "~@/assets/style/helper.scss";
   .tags {
-    background: white;
-    font-size: 14px;
+    background: $color-white;
+    font-size: 16px;
     padding: 16px;
     flex-grow: 1;
     display: flex;
     flex-direction: column-reverse;
-    > .current {
+    > .collection {
       display: flex;
       flex-wrap: wrap;
       > li {
-        $bg: #D9D9D9;
-        background: $bg;
-        $h: 24px;
-        height: $h;
-        line-height: $h;
-        border-radius: $h/2;
-        padding: 0 16px;
+        background: #F5F5F5;
+        height: 32px;
+        line-height: 32px;
+        border-radius: 8px;
         margin-right: 12px;
-        margin-top: 4px;
+        margin-top: 10px;
+        .current {
+          padding: 0 16px;
+        }
         &.selected {
-          background: darken($bg, 50%);
-          color: white;
+          background: $color-theme;
+          color: $color-white;
         }
       }
-    }
-    > .new {
-      padding-top: 16px;
-      button {
-        background: transparent;
-        border: none;
-        color: #999;
-        border-bottom: 1px solid;
-        padding: 0 4px;
+      .new {
+        padding: 0 8px;
       }
     }
-  }
+  }    
 </style>

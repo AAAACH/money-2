@@ -1,13 +1,14 @@
 <template>
   <Layout class-prefix="layout">
     <NumberPad :value.sync="record.amount" @submit="saveRecord"/>
-    <Tabs :data-source="recordTypeList"
-          :value.sync="record.type"/>
     <div class="notes">
-      <FormItem field-name="备注" placeholder="在这里输入备注"
-                :value.sync="record.notes"/>
+      <div class="icon">
+        <Icon name="note"/>
+      </div>
+      <FormItem field-name="备注" placeholder="在这里输入备注" :value.sync="record.notes"/>
     </div>
     <Tags @update:value="record.tags = $event"/>
+    <Tabs :data-source="recordTypeList" :value.sync="record.type"/>
   </Layout>
 </template>
 
@@ -62,5 +63,12 @@
   }
   .notes {
     padding: 12px 0;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    .icon {
+      margin-top: 3px;
+      margin-right: -8px;
+    }
   }
 </style>
